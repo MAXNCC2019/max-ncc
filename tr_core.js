@@ -1,0 +1,2 @@
+function setLang(l){const d=window.TR[l]||window.TR.it;document.documentElement.lang=l;document.querySelectorAll('[data-k]').forEach(e=>{const k=e.dataset.k;if(d[k]!=null)e.textContent=d[k]});document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));try{localStorage.setItem('maxnccLang',l)}catch(e){}}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));let init='it';try{init=localStorage.getItem('maxnccLang')||'it'}catch(e){}setLang(init);
