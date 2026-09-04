@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maxncc2019.github.io/max-ncc/sitemap.xml
