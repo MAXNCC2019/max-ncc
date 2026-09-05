@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Richiedi un preventivo | MAX NCC</title>
+<meta name="theme-color" content="#05080a">
+<style>
+:root{--bg:#020609;--panel:#071118;--gold:#e8b43b;--gold2:#ffd76b;--text:#f8f5ef;--muted:#c9c3b8;--line:rgba(232,180,59,.38)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,rgba(232,180,59,.12),transparent 30%),#020609;color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}.wrap{width:min(1120px,calc(100% - 28px));margin:auto}.top{padding:22px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{width:210px;max-width:42vw}.back{border:1px solid var(--line);border-radius:999px;padding:10px 16px}.hero{text-align:center;padding:8px 0 18px}.hero h1{font:700 clamp(2rem,4vw,3.4rem) Georgia,serif;color:var(--gold2);margin:.2em 0}.hero p{color:var(--muted);margin:0}.langs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0}.langs button{background:#081117;color:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer}.langs button.active{background:linear-gradient(135deg,#f2c45c,#ffdd83);color:#111}.card{background:linear-gradient(145deg,#09141b,#04090d);border:1px solid var(--line);border-radius:18px;padding:22px;margin:14px 0;box-shadow:0 20px 50px rgba(0,0,0,.25)}.card h2{font:700 1.35rem Georgia,serif;color:var(--gold2);margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.full{grid-column:1/-1}.field label{display:block;font-size:.88rem;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#050b0f;color:#fff;border:1px solid #45515a;border-radius:10px;padding:13px 14px;font:inherit;outline:none}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold2);box-shadow:0 0 0 3px rgba(255,215,107,.08)}.privacy{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.88rem}.privacy input{margin-top:3px}.submit{width:100%;border:0;border-radius:999px;padding:16px 22px;background:linear-gradient(135deg,#f2c45c,#ffdd83);color:#111;font-size:1.05rem;font-weight:900;cursor:pointer}.hint{text-align:center;color:#9fa7ad;font-size:.78rem;margin-top:10px}.success{display:none;border:1px solid var(--gold);background:#061018;border-radius:16px;padding:20px;margin-top:18px}.success strong{color:var(--gold2)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.actions a{flex:1;min-width:210px;text-align:center;border-radius:999px;padding:13px 16px;font-weight:800}.wa{background:#15a85a}.mail{background:#1479d0}.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px 0 30px}.badge{text-align:center;border-top:1px solid var(--line);padding-top:16px}.badge b{display:block;color:var(--gold2);margin-top:6px}.footer{text-align:center;color:#aaa;padding:18px 0 30px;border-top:1px solid var(--line);font-size:.82rem}
+@media(max-width:720px){.top{align-items:flex-start}.grid{grid-template-columns:1fr}.full{grid-column:auto}.badges{grid-template-columns:repeat(2,1fr)}.logo{width:165px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="index.html"><img src="logo-max-ncc.webp" alt="MAX NCC" class="logo"></a><a href="index.html" class="back" data-t="back">← Torna al sito</a></div>
+<section class="hero"><h1 data-t="title">Richiedi un preventivo</h1><p data-t="subtitle">Compila il form: riceveremo tutti i dati necessari per preparare la tua offerta.</p></section>
+<div class="langs">
+<button type="button" data-lang="it">🇮🇹 IT</button><button type="button" data-lang="en">🇬🇧 EN</button><button type="button" data-lang="fr">🇫🇷 FR</button><button type="button" data-lang="de">🇩🇪 DE</button><button type="button" data-lang="es">🇪🇸 ES</button>
+</div>
+<form id="quoteForm">
+<div class="card"><h2 data-t="service">🚘 Informazioni servizio</h2><div class="grid">
+<div class="field"><label data-t="type">Tipo di servizio *</label><select id="type" required><option value="" data-t="choose">Seleziona...</option><option value="Transfer aeroporto">Transfer aeroporto</option><option value="Transfer porto">Transfer porto</option><option value="Transfer stazione">Transfer stazione</option><option value="Disposizione oraria">Disposizione oraria</option><option value="Tour / Escursione">Tour / Escursione</option><option value="Altro">Altro</option></select></div>
+<div class="field"><label data-t="date">Data del servizio *</label><input id="date" type="date" required></div>
+<div class="field"><label data-t="time">Ora *</label><input id="time" type="time" required></div>
+<div class="field"><label data-t="round">Andata e ritorno?</label><select id="round"><option value="No">No</option><option value="Sì">Sì</option></select></div>
+<div class="field full"><label data-t="from">Partenza *</label><input id="from" required data-ph="fromph" placeholder="Indirizzo, aeroporto, stazione, hotel..."></div>
+<div class="field full"><label data-t="to">Destinazione *</label><input id="to" required data-ph="toph" placeholder="Indirizzo, aeroporto, stazione, hotel..."></div>
+<div class="field"><label data-t="pax">Numero passeggeri *</label><input id="pax" type="number" min="1" value="1" required></div>
+<div class="field"><label data-t="bags">Numero bagagli</label><input id="bags" type="number" min="0" value="0"></div>
+</div></div>
+<div class="card"><h2 data-t="extra">ℹ️ Dettagli aggiuntivi</h2><div class="grid">
+<div class="field"><label data-t="travel">Volo / Nave / Treno</label><input id="travel" data-ph="travelph" placeholder="Es. AZ204, FR123, IC512..."></div>
+<div class="field"><label data-t="notes">Note / Richieste particolari</label><textarea id="notes" data-ph="notesph" placeholder="Seggiolino bambino, soste, esigenze particolari..."></textarea></div>
+</div></div>
+<div class="card"><h2 data-t="contacts">👤 I tuoi contatti</h2><div class="grid">
+<div class="field"><label data-t="name">Nome e Cognome *</label><input id="name" required></div>
+<div class="field"><label>Email</label><input id="email" type="email"></div>
+<div class="field"><label data-t="phone">Telefono / WhatsApp *</label><input id="phone" type="tel" required placeholder="+39 ..."></div>
+<div class="field"><label data-t="channel">Canale preferito</label><select id="channel"><option value="whatsapp">WhatsApp</option><option value="email">Email</option></select></div>
+<div class="full privacy"><input id="privacy" type="checkbox" required><label for="privacy" data-t="privacy">Accetto che i dati inseriti siano utilizzati esclusivamente per rispondere alla richiesta di preventivo.</label></div>
+<div class="full"><button class="submit" type="submit" data-t="submit">✈ RICHIEDI PREVENTIVO</button><div class="hint" data-t="hint">Verrà creato un codice richiesta univoco e si aprirà il canale scelto con tutti i dati già compilati.</div></div>
+</div>
+<div id="success" class="success"><div data-t="ready">Richiesta preparata correttamente.</div><div style="margin-top:6px"><span data-t="code">Codice richiesta:</span> <strong id="serial"></strong></div><div class="actions"><a id="waLink" class="wa" target="_blank" rel="noopener" data-t="sendwa">Invia su WhatsApp</a><a id="mailLink" class="mail" data-t="sendmail">Invia via Email</a></div></div>
+</div>
+</form>
+<div class="badges"><div class="badge">💎<b data-t="b1">SERVIZIO PREMIUM</b></div><div class="badge">🛡️<b data-t="b2">MASSIMA RISERVATEZZA</b></div><div class="badge">🕒<b data-t="b3">SEMPRE PUNTUALI</b></div><div class="badge">👨‍✈️<b data-t="b4">AUTISTI PROFESSIONALI</b></div></div>
+<div class="footer">MAX NCC • Roma e Centro Italia • +39 393 528 4668 • rossimax1966@outlook.it</div>
+</div>
+<script>
+const T={
+it:{back:"← Torna al sito",title:"Richiedi un preventivo",subtitle:"Compila il form: riceveremo tutti i dati necessari per preparare la tua offerta.",service:"🚘 Informazioni servizio",type:"Tipo di servizio *",choose:"Seleziona...",date:"Data del servizio *",time:"Ora *",round:"Andata e ritorno?",from:"Partenza *",to:"Destinazione *",pax:"Numero passeggeri *",bags:"Numero bagagli",extra:"ℹ️ Dettagli aggiuntivi",travel:"Volo / Nave / Treno",notes:"Note / Richieste particolari",contacts:"👤 I tuoi contatti",name:"Nome e Cognome *",phone:"Telefono / WhatsApp *",channel:"Canale preferito",privacy:"Accetto che i dati inseriti siano utilizzati esclusivamente per rispondere alla richiesta di preventivo.",submit:"✈ RICHIEDI PREVENTIVO",hint:"Verrà creato un codice richiesta univoco e si aprirà il canale scelto con tutti i dati già compilati.",ready:"Richiesta preparata correttamente.",code:"Codice richiesta:",sendwa:"Invia su WhatsApp",sendmail:"Invia via Email",b1:"SERVIZIO PREMIUM",b2:"MASSIMA RISERVATEZZA",b3:"SEMPRE PUNTUALI",b4:"AUTISTI PROFESSIONALI",fromph:"Indirizzo, aeroporto, stazione, hotel...",toph:"Indirizzo, aeroporto, stazione, hotel...",travelph:"Es. AZ204, FR123, IC512...",notesph:"Seggiolino bambino, soste, esigenze particolari..."},
+en:{back:"← Back to website",title:"Request a quote",subtitle:"Fill in the form: we will receive everything needed to prepare your offer.",service:"🚘 Service information",type:"Service type *",choose:"Select...",date:"Service date *",time:"Time *",round:"Round trip?",from:"Pickup *",to:"Destination *",pax:"Passengers *",bags:"Luggage",extra:"ℹ️ Additional details",travel:"Flight / Ship / Train",notes:"Notes / Special requests",contacts:"👤 Your contacts",name:"Full name *",phone:"Phone / WhatsApp *",channel:"Preferred channel",privacy:"I agree that the entered data may be used only to answer my quote request.",submit:"✈ REQUEST A QUOTE",hint:"A unique request code will be created and your chosen channel will open with all details pre-filled.",ready:"Request prepared successfully.",code:"Request code:",sendwa:"Send on WhatsApp",sendmail:"Send by Email",b1:"PREMIUM SERVICE",b2:"MAXIMUM PRIVACY",b3:"ALWAYS ON TIME",b4:"PROFESSIONAL DRIVERS",fromph:"Address, airport, station, hotel...",toph:"Address, airport, station, hotel...",travelph:"E.g. AZ204, FR123, IC512...",notesph:"Child seat, stops, special requirements..."},
+fr:{back:"← Retour au site",title:"Demander un devis",subtitle:"Remplissez le formulaire : nous recevrons toutes les informations nécessaires pour préparer votre offre.",service:"🚘 Informations sur le service",type:"Type de service *",choose:"Sélectionnez...",date:"Date du service *",time:"Heure *",round:"Aller-retour ?",from:"Départ *",to:"Destination *",pax:"Nombre de passagers *",bags:"Nombre de bagages",extra:"ℹ️ Détails supplémentaires",travel:"Vol / Navire / Train",notes:"Notes / Demandes particulières",contacts:"👤 Vos coordonnées",name:"Nom et prénom *",phone:"Téléphone / WhatsApp *",channel:"Canal préféré",privacy:"J'accepte que les données saisies soient utilisées uniquement pour répondre à ma demande de devis.",submit:"✈ DEMANDER UN DEVIS",hint:"Un code de demande unique sera créé et le canal choisi s'ouvrira avec toutes les informations préremplies.",ready:"Demande préparée correctement.",code:"Code de demande :",sendwa:"Envoyer sur WhatsApp",sendmail:"Envoyer par e-mail",b1:"SERVICE PREMIUM",b2:"CONFIDENTIALITÉ MAXIMALE",b3:"TOUJOURS À L'HEURE",b4:"CHAUFFEURS PROFESSIONNELS",fromph:"Adresse, aéroport, gare, hôtel...",toph:"Adresse, aéroport, gare, hôtel...",travelph:"Ex. AZ204, FR123, IC512...",notesph:"Siège enfant, arrêts, besoins particuliers..."},
+de:{back:"← Zurück zur Website",title:"Angebot anfordern",subtitle:"Füllen Sie das Formular aus: Wir erhalten alle Angaben, die wir für Ihr Angebot benötigen.",service:"🚘 Serviceinformationen",type:"Serviceart *",choose:"Auswählen...",date:"Servicedatum *",time:"Uhrzeit *",round:"Hin- und Rückfahrt?",from:"Abholung *",to:"Ziel *",pax:"Fahrgäste *",bags:"Gepäck",extra:"ℹ️ Zusätzliche Angaben",travel:"Flug / Schiff / Zug",notes:"Notizen / Sonderwünsche",contacts:"👤 Ihre Kontaktdaten",name:"Vor- und Nachname *",phone:"Telefon / WhatsApp *",channel:"Bevorzugter Kanal",privacy:"Ich stimme zu, dass die eingegebenen Daten nur zur Beantwortung meiner Angebotsanfrage verwendet werden.",submit:"✈ ANGEBOT ANFORDERN",hint:"Es wird ein eindeutiger Anfragecode erstellt und der gewählte Kanal mit allen vorausgefüllten Daten geöffnet.",ready:"Anfrage erfolgreich vorbereitet.",code:"Anfragecode:",sendwa:"Über WhatsApp senden",sendmail:"Per E-Mail senden",b1:"PREMIUM-SERVICE",b2:"MAXIMALE DISKRETION",b3:"IMMER PÜNKTLICH",b4:"PROFESSIONELLE FAHRER",fromph:"Adresse, Flughafen, Bahnhof, Hotel...",toph:"Adresse, Flughafen, Bahnhof, Hotel...",travelph:"Z. B. AZ204, FR123, IC512...",notesph:"Kindersitz, Stopps, besondere Wünsche..."},
+es:{back:"← Volver al sitio",title:"Solicitar presupuesto",subtitle:"Completa el formulario: recibiremos toda la información necesaria para preparar tu oferta.",service:"🚘 Información del servicio",type:"Tipo de servicio *",choose:"Seleccionar...",date:"Fecha del servicio *",time:"Hora *",round:"¿Ida y vuelta?",from:"Recogida *",to:"Destino *",pax:"Número de pasajeros *",bags:"Número de equipajes",extra:"ℹ️ Detalles adicionales",travel:"Vuelo / Barco / Tren",notes:"Notas / Solicitudes especiales",contacts:"👤 Tus contactos",name:"Nombre y apellidos *",phone:"Teléfono / WhatsApp *",channel:"Canal preferido",privacy:"Acepto que los datos introducidos se utilicen únicamente para responder a mi solicitud de presupuesto.",submit:"✈ SOLICITAR PRESUPUESTO",hint:"Se creará un código de solicitud único y se abrirá el canal elegido con todos los datos ya rellenados.",ready:"Solicitud preparada correctamente.",code:"Código de solicitud:",sendwa:"Enviar por WhatsApp",sendmail:"Enviar por Email",b1:"SERVICIO PREMIUM",b2:"MÁXIMA PRIVACIDAD",b3:"SIEMPRE PUNTUALES",b4:"CONDUCTORES PROFESIONALES",fromph:"Dirección, aeropuerto, estación, hotel...",toph:"Dirección, aeropuerto, estación, hotel...",travelph:"Ej. AZ204, FR123, IC512...",notesph:"Silla infantil, paradas, necesidades especiales..."}
+};
+let lang="it";try{lang=localStorage.getItem("maxnccLang")||"it"}catch(e){}
+function setLang(l){lang=T[l]?l:"it";document.documentElement.lang=lang;document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t;if(T[lang][k])e.textContent=T[lang][k]});document.querySelectorAll("[data-ph]").forEach(e=>{const k=e.dataset.ph;if(T[lang][k])e.placeholder=T[lang][k]});document.querySelectorAll(".langs button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));try{localStorage.setItem("maxnccLang",lang)}catch(e){}}
+document.querySelectorAll(".langs button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));setLang(lang);
+function v(id){return document.getElementById(id).value.trim()}
+function serial(){const d=new Date(),p=n=>String(n).padStart(2,"0"),r=Math.floor(1000+Math.random()*9000);return "MAX-"+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+"-"+p(d.getHours())+p(d.getMinutes())+"-"+r}
+document.getElementById("quoteForm").addEventListener("submit",e=>{
+e.preventDefault();if(!e.currentTarget.reportValidity())return;
+const s=serial(), lines=[
+"RICHIESTA PREVENTIVO MAX NCC",
+"Codice: "+s,
+"------------------------------",
+"Data: "+v("date"),
+"Ora: "+v("time"),
+"Tipo servizio: "+v("type"),
+"Partenza: "+v("from"),
+"Destinazione: "+v("to"),
+"Andata e ritorno: "+v("round"),
+"Passeggeri: "+v("pax"),
+"Bagagli: "+v("bags"),
+"Volo/Nave/Treno: "+(v("travel")||"-"),
+"Note: "+(v("notes")||"-"),
+"------------------------------",
+"Nome: "+v("name"),
+"Telefono/WhatsApp: "+v("phone"),
+"Email: "+(v("email")||"-"),
+"Lingua: "+lang.toUpperCase()
+];
+const msg=lines.join("\n"), subject="Richiesta preventivo MAX NCC - "+s;
+const wa="https://wa.me/393935284668?text="+encodeURIComponent(msg);
+const mail="mailto:rossimax1966@outlook.it?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(msg);
+document.getElementById("serial").textContent=s;document.getElementById("waLink").href=wa;document.getElementById("mailLink").href=mail;document.getElementById("success").style.display="block";document.getElementById("success").scrollIntoView({behavior:"smooth",block:"center"});
+try{localStorage.setItem("maxnccLastQuote",s)}catch(x){}
+if(v("channel")==="email"&&v("email"))location.href=mail;else window.open(wa,"_blank","noopener");
+});
+</script>
+</body></html>
