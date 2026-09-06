@@ -303,41 +303,70 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
   });
 })();
 
-/* MAX NCC destination guide: Tuscany card opens the dedicated guide. */
+/* MAX NCC destination guides: every travel card opens its dedicated page. */
 (function(){
-  function wireTuscanyCard(){
-    const labels = document.querySelectorAll('[data-i18n="tuscany"]');
-    labels.forEach(function(label){
-      const card = label.closest("article");
-      if(!card || card.dataset.tuscanyWired==="1") return;
-      card.dataset.tuscanyWired="1";
+  const DESTS=[
+    {file:"roma.html",keys:["g_roma","rome","roma"],names:["roma","rome","rom"]},
+    {file:"vaticano.html",keys:["g_vaticano","vatican","vaticano"],names:["città del vaticano","citta del vaticano","vatican city","cité du vatican","cite du vatican","vatikanstadt","ciudad del vaticano"]},
+    {file:"civitavecchia.html",keys:["g_civitavecchia","civitavecchia"],names:["civitavecchia"]},
+    {file:"toscana.html",keys:["g_toscana","tuscany","toscana"],names:["toscana","tuscany","toscane","toskana"]},
+    {file:"umbria.html",keys:["g_umbria","umbria"],names:["umbria","ombrie","umbrien","umbría"]},
+    {file:"marche.html",keys:["g_marche","marche"],names:["marche","marches","marken","marcas"]},
+    {file:"emilia-romagna.html",keys:["g_emilia","emilia","emilia-romagna"],names:["emilia-romagna","émilie-romagne","emilie-romagne","emilia-romaña","emilia-romana"]},
+    {file:"lazio.html",keys:["g_lazio","lazio"],names:["lazio","latium","lacio"]}
+  ];
+  function norm(s){
+    return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ").trim();
+  }
+  function identify(card){
+    const attrs=[];
+    card.querySelectorAll("[data-k],[data-i18n]").forEach(function(el){
+      if(el.dataset.k)attrs.push(norm(el.dataset.k));
+      if(el.dataset.i18n)attrs.push(norm(el.dataset.i18n));
+    });
+    for(const d of DESTS){
+      if(d.keys.some(function(k){return attrs.includes(norm(k))}))return d;
+    }
+    const title=norm((card.querySelector("h1,h2,h3,h4,strong")||card).textContent);
+    for(const d of DESTS){
+      if(d.names.some(function(n){const x=norm(n);return title===x||title.startsWith(x+" ")}))return d;
+    }
+    return null;
+  }
+  function wireDestinationCards(){
+    const candidates=new Set();
+    document.querySelectorAll('[data-k^="g_"],[data-i18n]').forEach(function(el){
+      const card=el.closest("article");
+      if(card)candidates.add(card);
+    });
+    document.querySelectorAll("article").forEach(function(card){
+      const txt=norm(card.textContent);
+      if(DESTS.some(function(d){return d.names.some(function(n){return txt.startsWith(norm(n))})}))candidates.add(card);
+    });
+    candidates.forEach(function(card){
+      if(card.dataset.destinationGuideWired==="1")return;
+      const d=identify(card);
+      if(!d)return;
+      card.dataset.destinationGuideWired="1";
       card.style.cursor="pointer";
       card.setAttribute("role","link");
       card.setAttribute("tabindex","0");
-      card.setAttribute("aria-label","Toscana - guida di viaggio MAX NCC");
       function openGuide(e){
-        if(e && e.target && e.target.closest && e.target.closest("a,button")) return;
-        window.location.href="toscana.html";
+        if(e&&e.target&&e.target.closest&&e.target.closest("a,button"))return;
+        window.location.href=d.file;
       }
       card.addEventListener("click",openGuide);
       card.addEventListener("keydown",function(e){
-        if(e.key==="Enter" || e.key===" "){
-          e.preventDefault();
-          openGuide(e);
-        }
+        if(e.key==="Enter"||e.key===" "){e.preventDefault();openGuide(e)}
       });
     });
   }
-  if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded",wireTuscanyCard);
-  }else{
-    wireTuscanyCard();
-  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",wireDestinationCards);else wireDestinationCards();
+  window.addEventListener("pageshow",wireDestinationCards);
   document.querySelectorAll(".langs button").forEach(function(b){
-    b.addEventListener("click",function(){setTimeout(wireTuscanyCard,0)});
+    b.addEventListener("click",function(){setTimeout(wireDestinationCards,0)});
   });
 })();
-
 
 /* MAX NCC gallery instruction: replace the old "all destinations" button with a non-clickable hint. */
 (function(){
