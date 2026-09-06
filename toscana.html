@@ -477,7 +477,7 @@ es:{back:"← Volver al sitio",eyebrow:"INSPIRACIÓN DE VIAJE • MAX NCC",title
 };
 let lang="it";
 function setLang(l){lang=T[l]?l:"it";document.documentElement.lang=lang;document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t;if(T[lang][k])e.textContent=T[lang][k]});document.querySelectorAll(".langs button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));try{localStorage.setItem("maxnccLang",lang);localStorage.setItem("maxncc-lang",lang)}catch(e){}}
-document.querySelectorAll(".langs button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));setLang(lang);
+document.querySelectorAll(".langs button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));setLang("it");window.addEventListener("pageshow",function(){setLang("it")});
 </script>
 </body>
 </html>
