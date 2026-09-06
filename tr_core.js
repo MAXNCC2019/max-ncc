@@ -214,3 +214,91 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",wireInfoButtons);else wireInfoButtons();
   document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setTimeout(wireInfoButtons,0)})});
 })();
+
+
+/* MAX NCC: one quote flow only.
+   Direct WhatsApp booking CTA is removed from the home page.
+   "Prenota ora" and "Richiedi preventivo" (and translations) always open preventivo.html. */
+(function(){
+  function onQuotePage(){
+    return /(?:^|\/)preventivo\.html$/i.test(location.pathname);
+  }
+
+  function normalize(s){
+    return (s||"").replace(/\s+/g," ").trim().toLowerCase();
+  }
+
+  const quoteLabels=[
+    "prenota ora","richiedi preventivo",
+    "book now","request a quote",
+    "réserver maintenant","demander un devis",
+    "jetzt buchen","angebot anfordern",
+    "reservar ahora","solicitar presupuesto"
+  ];
+
+  function removeDirectWhatsAppBooking(){
+    if(onQuotePage())return;
+    document.querySelectorAll("a,button").forEach(function(el){
+      if(el.closest("#maxncc-info-modal"))return;
+      const txt=normalize(el.textContent);
+      const href=normalize(el.getAttribute&&el.getAttribute("href"));
+      const hasWaKey=!!el.querySelector&&!!el.querySelector('[data-k="wa1"],[data-k="wa2"]');
+      const looksLikeBooking=hasWaKey ||
+        (txt.includes("whatsapp") && (
+          txt.includes("preventiv") ||
+          txt.includes("quote") ||
+          txt.includes("devis") ||
+          txt.includes("angebot") ||
+          txt.includes("presupuesto") ||
+          txt.includes("prenota") ||
+          txt.includes("book") ||
+          txt.includes("réserver") ||
+          txt.includes("buchen") ||
+          txt.includes("reservar")
+        ));
+      const directWhatsApp=href.includes("wa.me") || href.includes("whatsapp");
+      if(looksLikeBooking && (directWhatsApp || hasWaKey)){
+        el.remove();
+      }
+    });
+  }
+
+  function wireUnifiedQuoteButtons(){
+    if(onQuotePage())return;
+    document.querySelectorAll("a,button").forEach(function(el){
+      if(el.closest("#maxncc-info-modal") && !el.classList.contains("maxncc-quote-link"))return;
+      const txt=normalize(el.textContent);
+      const key=normalize((el.dataset&&((el.dataset.k||"")+" "+(el.dataset.i18n||"")))||"");
+      const isQuote=key.split(/\s+/).includes("quote") ||
+        quoteLabels.some(function(label){return txt===label || txt.includes(label)});
+      if(!isQuote)return;
+
+      if(el.tagName==="A"){
+        el.setAttribute("href","preventivo.html");
+        el.removeAttribute("target");
+        el.removeAttribute("rel");
+      }else if(!el.dataset.unifiedQuoteWired){
+        el.dataset.unifiedQuoteWired="1";
+        el.addEventListener("click",function(e){
+          e.preventDefault();
+          location.href="preventivo.html";
+        });
+      }
+    });
+  }
+
+  function applyQuoteFlow(){
+    removeDirectWhatsAppBooking();
+    wireUnifiedQuoteButtons();
+  }
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",applyQuoteFlow);
+  }else{
+    applyQuoteFlow();
+  }
+
+  document.querySelectorAll(".langs button").forEach(function(b){
+    b.addEventListener("click",function(){setTimeout(applyQuoteFlow,0)});
+  });
+})();
