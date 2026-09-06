@@ -303,28 +303,37 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
   });
 })();
 
-
-/* MAX NCC destination guides: make the Tuscany travel card open the dedicated guide. */
+/* MAX NCC destination guide: Tuscany card opens the dedicated guide. */
 (function(){
   function wireTuscanyCard(){
-    document.querySelectorAll('[data-k="g_toscana"]').forEach(function(label){
-      const card=label.closest(".destination")||label.closest("article")||label.parentElement;
-      if(!card||card.dataset.tuscanyWired)return;
+    const labels = document.querySelectorAll('[data-i18n="tuscany"]');
+    labels.forEach(function(label){
+      const card = label.closest("article");
+      if(!card || card.dataset.tuscanyWired==="1") return;
       card.dataset.tuscanyWired="1";
       card.style.cursor="pointer";
       card.setAttribute("role","link");
       card.setAttribute("tabindex","0");
       card.setAttribute("aria-label","Toscana - guida di viaggio MAX NCC");
-      function go(e){
-        if(e&&e.target&&e.target.closest&&e.target.closest("a,button"))return;
-        location.href="toscana.html";
+      function openGuide(e){
+        if(e && e.target && e.target.closest && e.target.closest("a,button")) return;
+        window.location.href="toscana.html";
       }
-      card.addEventListener("click",go);
+      card.addEventListener("click",openGuide);
       card.addEventListener("keydown",function(e){
-        if(e.key==="Enter"||e.key===" "){e.preventDefault();go(e)}
+        if(e.key==="Enter" || e.key===" "){
+          e.preventDefault();
+          openGuide(e);
+        }
       });
     });
   }
-  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",wireTuscanyCard);else wireTuscanyCard();
-  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setTimeout(wireTuscanyCard,0)})});
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",wireTuscanyCard);
+  }else{
+    wireTuscanyCard();
+  }
+  document.querySelectorAll(".langs button").forEach(function(b){
+    b.addEventListener("click",function(){setTimeout(wireTuscanyCard,0)});
+  });
 })();
