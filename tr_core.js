@@ -1,5 +1,5 @@
 function setLang(l){const d=window.TR[l]||window.TR.it;document.documentElement.lang=l;document.querySelectorAll('[data-k]').forEach(e=>{const k=e.dataset.k;if(d[k]!=null)e.textContent=d[k]});document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));try{localStorage.setItem('maxnccLang',l)}catch(e){}}
-document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));let init='it';try{init=localStorage.getItem('maxnccLang')||'it'}catch(e){}setLang(init);
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang('it');
 
 (function(){
   function wireQuoteForm(){
@@ -335,5 +335,61 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
   }
   document.querySelectorAll(".langs button").forEach(function(b){
     b.addEventListener("click",function(){setTimeout(wireTuscanyCard,0)});
+  });
+})();
+
+
+/* MAX NCC gallery instruction: replace the old "all destinations" button with a non-clickable hint. */
+(function(){
+  const TXT={
+    it:"Clicca su una foto per scoprire tutte le informazioni sulla destinazione",
+    en:"Click a photo to discover all the information about the destination",
+    fr:"Cliquez sur une photo pour découvrir toutes les informations sur la destination",
+    de:"Klicken Sie auf ein Foto, um alle Informationen zum Reiseziel zu entdecken",
+    es:"Haz clic en una foto para descubrir toda la información sobre el destino"
+  };
+  function lang(){
+    const l=(document.documentElement.lang||"it").toLowerCase().slice(0,2);
+    return TXT[l]?l:"it";
+  }
+  function applyGalleryHint(){
+    const title=document.querySelector('[data-k="gallery_t"]');
+    if(!title)return;
+    const section=title.closest("section")||title.parentElement;
+    if(!section)return;
+    let hint=section.querySelector(".maxncc-gallery-hint");
+    if(!hint){
+      const candidates=section.querySelectorAll("a,button");
+      let old=null;
+      candidates.forEach(function(el){
+        const txt=(el.textContent||"").replace(/\s+/g," ").trim().toLowerCase();
+        const href=(el.getAttribute&&el.getAttribute("href"))||"";
+        if(
+          href==="#dest" ||
+          txt.includes("tutte le destinazioni") ||
+          txt.includes("all destinations") ||
+          txt.includes("toutes les destinations") ||
+          txt.includes("alle reiseziele") ||
+          txt.includes("todos los destinos")
+        ) old=el;
+      });
+      hint=document.createElement("div");
+      hint.className="maxncc-gallery-hint";
+      hint.setAttribute("role","note");
+      hint.style.cssText="display:inline-flex;align-items:center;gap:9px;margin:12px 0 24px;padding:11px 16px;border:1px solid rgba(231,185,77,.45);border-radius:999px;background:rgba(231,185,77,.07);color:#f7f1e5;font-weight:700;font-size:.95rem;line-height:1.35";
+      hint.innerHTML='<span aria-hidden="true" style="color:#ffd976;font-size:1.1em">ⓘ</span><span class="maxncc-gallery-hint-text"></span>';
+      if(old) old.replaceWith(hint);
+      else {
+        const p=section.querySelector('[data-k="gallery_p"]');
+        if(p && p.parentNode) p.insertAdjacentElement("afterend",hint);
+        else title.insertAdjacentElement("afterend",hint);
+      }
+    }
+    const span=hint.querySelector(".maxncc-gallery-hint-text");
+    if(span)span.textContent=TXT[lang()];
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",applyGalleryHint);else applyGalleryHint();
+  document.querySelectorAll(".langs button").forEach(function(b){
+    b.addEventListener("click",function(){setTimeout(applyGalleryHint,0)});
   });
 })();
