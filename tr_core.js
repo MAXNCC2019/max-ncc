@@ -21,7 +21,7 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
   const INFO={
     it:{
       servicesTitle:"Servizi NCC",
-      servicesIntro:"Servizi di noleggio con conducente su prenotazione, per spostamenti privati, business e tempo libero.",
+      servicesIntro:"Servizi di noleggio con conducente su prenotazione, con preventivi chiari e tariffe competitive per spostamenti privati, business e tempo libero.",
       services:[
         "Transfer aeroportuali da/per Fiumicino (FCO) e Ciampino (CIA)",
         "Transfer da/per il Porto di Civitavecchia",
@@ -42,7 +42,7 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
     },
     en:{
       servicesTitle:"NCC Services",
-      servicesIntro:"Pre-booked chauffeur services for private travel, business journeys and leisure.",
+      servicesIntro:"Pre-booked chauffeur services with clear quotes and competitive rates for private travel, business journeys and leisure.",
       services:[
         "Airport transfers to/from Fiumicino (FCO) and Ciampino (CIA)",
         "Transfers to/from the Port of Civitavecchia",
@@ -63,7 +63,7 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
     },
     fr:{
       servicesTitle:"Services NCC",
-      servicesIntro:"Services de voiture avec chauffeur sur réservation, pour déplacements privés, professionnels et loisirs.",
+      servicesIntro:"Services de voiture avec chauffeur sur réservation, avec devis clairs et tarifs compétitifs pour déplacements privés, professionnels et loisirs.",
       services:[
         "Transferts aéroport vers/depuis Fiumicino (FCO) et Ciampino (CIA)",
         "Transferts vers/depuis le port de Civitavecchia",
@@ -84,7 +84,7 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
     },
     de:{
       servicesTitle:"NCC Leistungen",
-      servicesIntro:"Chauffeurservice nach Vorbestellung für private Fahrten, Geschäftsreisen und Freizeit.",
+      servicesIntro:"Chauffeurservice nach Vorbestellung mit klaren Angeboten und wettbewerbsfähigen Preisen für private Fahrten, Geschäftsreisen und Freizeit.",
       services:[
         "Flughafentransfers von/nach Fiumicino (FCO) und Ciampino (CIA)",
         "Transfers von/zum Hafen Civitavecchia",
@@ -105,7 +105,7 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
     },
     es:{
       servicesTitle:"Servicios NCC",
-      servicesIntro:"Servicios con conductor bajo reserva para desplazamientos privados, de negocios y de ocio.",
+      servicesIntro:"Servicios con conductor bajo reserva, con presupuestos claros y tarifas competitivas para desplazamientos privados, de negocios y de ocio.",
       services:[
         "Traslados al aeropuerto desde/hacia Fiumicino (FCO) y Ciampino (CIA)",
         "Traslados desde/hacia el Puerto de Civitavecchia",
