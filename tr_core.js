@@ -422,3 +422,39 @@ document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click'
     b.addEventListener("click",function(){setTimeout(applyGalleryHint,0)});
   });
 })();
+
+
+/* MAX NCC airport service links */
+(function(){
+  const LINKS={
+    svc1:"fiumicino.html",
+    svc2:"ciampino.html",
+    svc3:"civitavecchia.html",
+    svc5:"roma.html"
+  };
+  function wire(){
+    Object.keys(LINKS).forEach(function(key){
+      document.querySelectorAll('[data-extra="'+key+'"]').forEach(function(label){
+        const card=label.closest(".ncc-basic-item")||label.parentElement;
+        if(!card||card.dataset.airportLinkWired==="1")return;
+        card.dataset.airportLinkWired="1";
+        card.style.cursor="pointer";
+        card.setAttribute("role","link");
+        card.setAttribute("tabindex","0");
+        card.setAttribute("aria-label",(label.textContent||key).trim());
+        function go(e){
+          if(e&&e.target&&e.target.closest&&e.target.closest("a,button"))return;
+          location.href=LINKS[key];
+        }
+        card.addEventListener("click",go);
+        card.addEventListener("keydown",function(e){
+          if(e.key==="Enter"||e.key===" "){e.preventDefault();go(e);}
+        });
+      });
+    });
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",wire);else wire();
+  document.querySelectorAll("[data-lang],.langs button").forEach(function(b){
+    b.addEventListener("click",function(){setTimeout(wire,0);});
+  });
+})();
