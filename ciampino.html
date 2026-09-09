@@ -17,42 +17,9 @@
 <meta name="theme-color" content="#05080a">
 <link rel="icon" href="logo-max-ncc.webp" type="image/webp">
 <link rel="stylesheet" href="destination.css">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"TaxiService",
-      "@id":"https://maxncc2019.github.io/max-ncc/#business",
-      "name":"MAX NCC",
-      "url":"https://maxncc2019.github.io/max-ncc/",
-      "telephone":"+393935284668",
-      "email":"rossimax1966@outlook.it",
-      "image":"https://maxncc2019.github.io/max-ncc/gallery.webp",
-      "areaServed":["Roma","Ciampino","Fiumicino","Civitavecchia","Lazio"],
-      "priceRange":"€€"
-    },
-    {
-      "@type":"Service",
-      "name":"NCC Ciampino - transfer aeroporto Roma",
-      "serviceType":"Noleggio con conducente e transfer aeroportuale",
-      "provider":{"@id":"https://maxncc2019.github.io/max-ncc/#business"},
-      "areaServed":["Aeroporto di Roma Ciampino","Roma","Fiumicino","Lazio"],
-      "url":"https://maxncc2019.github.io/max-ncc/ciampino.html"
-    },
-    {
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Quanto costa un NCC da Ciampino a Roma?","acceptedAnswer":{"@type":"Answer","text":"Il prezzo dipende dalla destinazione, dall'orario, dal numero di passeggeri e dalle esigenze del servizio. MAX NCC prepara un preventivo chiaro prima della conferma."}},
-        {"@type":"Question","name":"È possibile prenotare un transfer tra Ciampino e Fiumicino?","acceptedAnswer":{"@type":"Answer","text":"Sì. È possibile richiedere un transfer privato tra gli aeroporti di Ciampino e Fiumicino, oltre ai collegamenti con Roma e altre località."}},
-        {"@type":"Question","name":"Posso richiedere un NCC Ciampino per più passeggeri?","acceptedAnswer":{"@type":"Answer","text":"Sì. Nella richiesta di preventivo indica il numero di passeggeri e i bagagli, così da valutare la soluzione più adatta."}}
-      ]
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"NCC Ciampino - transfer aeroporto Roma","serviceType":"Noleggio con conducente e transfer aeroportuale","provider":{"@type":"LocalBusiness","name":"MAX NCC","url":"https://maxncc2019.github.io/max-ncc/","telephone":"+393935284668","email":"rossimax1966@outlook.it"},"areaServed":["Aeroporto di Roma Ciampino","Roma","Fiumicino","Lazio"],"url":"https://maxncc2019.github.io/max-ncc/ciampino.html"}]}</script>
 <style>
-.hero-cia{background-image:linear-gradient(90deg,rgba(2,8,12,.96),rgba(2,8,12,.72) 48%,rgba(2,8,12,.25)),url('gallery.webp')}
+.hero-airport{background-image:linear-gradient(90deg,rgba(2,8,12,.96),rgba(2,8,12,.72) 48%,rgba(2,8,12,.25)),url('gallery.webp')}
 .quick-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.quick-links a{border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:800;color:var(--gold2)}
 .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.faq{border:1px solid var(--line);border-radius:16px;padding:22px;background:#071016}.faq h3{font:700 1.12rem Georgia,serif;color:var(--gold2);margin:0 0 8px}.faq p{color:var(--muted);margin:0}
 @media(max-width:850px){.faq-grid{grid-template-columns:1fr}}
@@ -60,101 +27,65 @@
 </head>
 <body>
 <header><div class="shell nav">
-<a href="index.html"><img class="logo" src="logo-max-ncc.webp" alt="MAX NCC - Noleggio con conducente Roma"></a>
-<a class="back" href="index.html">← Torna al sito</a>
+<a href="index.html"><img class="logo" src="logo-max-ncc.webp" alt="MAX NCC"></a>
+<a class="back" href="index.html" data-t="back">← Torna al sito</a>
+<div class="langs" aria-label="Lingua">
+<button type="button" data-lang="it"><svg class="flag-svg" viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg><span>IT</span></button>
+<button type="button" data-lang="en"><svg class="flag-svg" viewBox="0 0 60 36"><rect width="60" height="36" fill="#012169"/><path d="M0 0L60 36M60 0L0 36" stroke="#fff" stroke-width="8"/><path d="M0 0L60 36M60 0L0 36" stroke="#C8102E" stroke-width="4"/><path d="M30 0V36M0 18H60" stroke="#fff" stroke-width="12"/><path d="M30 0V36M0 18H60" stroke="#C8102E" stroke-width="7"/></svg><span>EN</span></button>
+<button type="button" data-lang="fr"><svg class="flag-svg" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002395"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg><span>FR</span></button>
+<button type="button" data-lang="de"><svg class="flag-svg" viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect width="5" height="1" y="1" fill="#dd0000"/><rect width="5" height="1" y="2" fill="#ffce00"/></svg><span>DE</span></button>
+<button type="button" data-lang="es"><svg class="flag-svg" viewBox="0 0 6 4"><rect width="6" height="4" fill="#aa151b"/><rect width="6" height="2" y="1" fill="#f1bf00"/></svg><span>ES</span></button>
+</div>
 </div></header>
-
 <main>
-<section class="hero hero-cia">
-<div class="shell hero-copy">
-<div class="eyebrow">AEROPORTO DI ROMA CIAMPINO</div>
-<h1>NCC Ciampino</h1>
-<p>Transfer privato da e per Ciampino, Roma e Fiumicino con servizio su prenotazione, prezzi accessibili e tariffe competitive definite in base al viaggio.</p>
-<div class="hero-actions">
-<a class="btn gold" href="preventivo.html">Richiedi preventivo</a>
-<a class="btn" href="tel:+393935284668">Chiama +39 393 528 4668</a>
-</div>
-</div>
-</section>
+<section class="hero hero-airport"><div class="shell hero-copy">
+<div class="eyebrow" data-t="eyebrow">AEROPORTO DI ROMA CIAMPINO</div>
+<h1 data-t="title">NCC Ciampino</h1>
+<p data-t="intro">Transfer privati da e per Ciampino, Roma e Fiumicino con servizio su prenotazione, prezzi accessibili e tariffe competitive definite in base al viaggio.</p>
+<div class="hero-actions"><a class="btn gold" href="preventivo.html" data-t="quote">Richiedi preventivo</a><a class="btn" href="tel:+393935284668" data-t="call">Chiama +39 393 528 4668</a></div>
+</div></section>
 
-<section class="section alt">
-<div class="shell">
-<div class="section-head">
-<div class="kicker">TRANSFER AEROPORTUALI</div>
-<h2>Ciampino ↔ Roma, Fiumicino e Lazio</h2>
-<p>Il servizio NCC da Ciampino è organizzato su prenotazione e può essere richiesto per spostamenti verso Roma, l'altro aeroporto romano o destinazioni extraurbane.</p>
-</div>
+<section class="section alt"><div class="shell">
+<div class="section-head"><div class="kicker" data-t="s1k">TRANSFER AEROPORTUALI</div><h2 data-t="s1t">Ciampino ↔ Roma, Fiumicino e Lazio</h2><p data-t="s1p">Il servizio NCC da Ciampino è organizzato su prenotazione e può essere richiesto per spostamenti verso Roma, l’altro aeroporto romano o destinazioni extraurbane.</p></div>
 <div class="city-grid">
-<div class="card"><h3>Ciampino ↔ Roma</h3><p>Collegamento privato tra aeroporto e hotel, abitazioni, stazioni, uffici o punti concordati nella città di Roma.</p></div>
-<div class="card"><h3>Ciampino ↔ Fiumicino</h3><p>Transfer tra i due aeroporti di Roma, utile quando il viaggio prevede coincidenze o arrivo e partenza da scali differenti.</p></div>
-<div class="card"><h3>Ciampino ↔ Centro Italia</h3><p>Proseguimenti su richiesta verso altre località del Lazio e del Centro Italia, con percorso concordato in anticipo.</p></div>
-</div>
-</div>
-</section>
+<div class="card"><h3 data-t="c1t">Ciampino ↔ Roma</h3><p data-t="c1p">Collegamento privato tra aeroporto e hotel, abitazioni, stazioni, uffici o punti concordati nella città di Roma.</p></div>
+<div class="card"><h3 data-t="c2t">Ciampino ↔ Fiumicino</h3><p data-t="c2p">Transfer tra i due aeroporti di Roma, utile quando il viaggio prevede arrivo e partenza da scali differenti.</p></div>
+<div class="card"><h3 data-t="c3t">Ciampino ↔ Centro Italia</h3><p data-t="c3p">Proseguimenti su richiesta verso altre località del Lazio e del Centro Italia, con percorso concordato in anticipo.</p></div>
+</div></div></section>
 
-<section class="section">
-<div class="shell">
-<div class="section-head">
-<div class="kicker">PREZZI ACCESSIBILI</div>
-<h2>Un NCC conveniente senza rinunciare alla professionalità</h2>
-<p>Chi cerca un NCC economico da Ciampino spesso vuole soprattutto un costo comprensibile e un servizio organizzato. MAX NCC prepara il preventivo sulla tratta richiesta, con informazioni chiare prima della conferma.</p>
-</div>
+<section class="section"><div class="shell">
+<div class="section-head"><div class="kicker" data-t="s2k">PREZZI ACCESSIBILI</div><h2 data-t="s2t">Un NCC conveniente senza rinunciare alla professionalità</h2><p data-t="s2p">Chi cerca un NCC economico da Ciampino vuole soprattutto un costo comprensibile e un servizio organizzato. MAX NCC prepara il preventivo sulla tratta richiesta, con informazioni chiare prima della conferma.</p></div>
 <div class="feature-grid">
-<div class="feature"><h3>Tariffa definita sul viaggio</h3><p>Il preventivo tiene conto di percorso, orario, passeggeri, bagagli ed eventuali esigenze specifiche.</p></div>
-<div class="feature"><h3>Partenza e arrivo concordati</h3><p>Indichi dove vuoi essere prelevato e dove devi arrivare; il servizio viene organizzato sulla richiesta.</p></div>
-<div class="feature"><h3>Soluzioni per passeggeri e bagagli</h3><p>Comunica il numero di persone e il bagaglio previsto per valutare la soluzione più adatta.</p></div>
-<div class="feature"><h3>Preventivo semplice</h3><p>Puoi richiedere il prezzo tramite il modulo del sito e decidere se confermare dopo aver ricevuto le informazioni.</p></div>
-</div>
-</div>
-</section>
+<div class="feature"><h3 data-t="f1t">Tariffa definita sul viaggio</h3><p data-t="f1p">Il preventivo tiene conto di percorso, orario, passeggeri, bagagli ed eventuali esigenze specifiche.</p></div>
+<div class="feature"><h3 data-t="f2t">Partenza e arrivo concordati</h3><p data-t="f2p">Indichi dove vuoi essere prelevato e dove devi arrivare; il servizio viene organizzato sulla richiesta.</p></div>
+<div class="feature"><h3 data-t="f3t">Soluzioni per passeggeri e bagagli</h3><p data-t="f3p">Comunica il numero di persone e il bagaglio previsto per valutare la soluzione più adatta.</p></div>
+<div class="feature"><h3 data-t="f4t">Preventivo semplice</h3><p data-t="f4p">Puoi richiedere il prezzo tramite il modulo del sito e decidere se confermare dopo aver ricevuto le informazioni.</p></div>
+</div></div></section>
 
-<section class="section alt">
-<div class="shell route">
-<div>
-<div class="kicker">COLLEGAMENTI UTILI</div>
-<h2 style="font:700 clamp(2rem,4vw,3.4rem) Georgia,serif;margin:.15em 0">Da Ciampino verso la tua destinazione</h2>
-<p style="color:var(--muted)">Roma resta la tratta principale, ma puoi richiedere anche trasferimenti verso Fiumicino e altre località. Per ottenere un preventivo preciso indica sempre data, orario, partenza, destinazione e passeggeri.</p>
+<section class="section alt"><div class="shell route">
+<div><div class="kicker" data-t="s3k">COLLEGAMENTI UTILI</div><h2 style="font:700 clamp(2rem,4vw,3.4rem) Georgia,serif;margin:.15em 0" data-t="s3t">Da Ciampino verso la tua destinazione</h2><p style="color:var(--muted)" data-t="s3p">Roma resta la tratta principale, ma puoi richiedere anche trasferimenti verso Fiumicino e altre località.</p>
 <div class="quick-links">
-<a href="roma.html">NCC Roma</a>
-<a href="fiumicino.html">NCC Fiumicino</a>
-<a href="lazio.html">Destinazioni Lazio</a>
-<a href="index.html#servizi">Servizi NCC</a>
-</div>
-</div>
-<div class="route-box">
-<h3>Richiedi il transfer</h3>
-<ul class="route-list">
-<li>Aeroporto Ciampino → Roma</li>
-<li>Roma → Aeroporto Ciampino</li>
-<li>Ciampino → Fiumicino</li>
-<li>Ciampino → altre località del Lazio</li>
-<li>Itinerari personalizzati su richiesta</li>
-</ul>
-<a class="btn gold" href="preventivo.html">Richiedi preventivo</a>
-</div>
-</div>
-</section>
+<a href="roma.html" data-t="linkRome">NCC Roma</a>
+<a href="fiumicino.html" data-t="linkOther">NCC Fiumicino</a>
+<a href="civitavecchia.html" data-t="linkPort">NCC Civitavecchia</a>
+<a href="index.html#servizi" data-t="linkServices">Servizi NCC</a>
+</div></div>
+<div class="route-box"><h3 data-t="routeBoxT">Richiedi il transfer</h3><ul class="route-list">
+<li data-t="r1">Aeroporto Ciampino → Roma</li><li data-t="r2">Roma → Aeroporto Ciampino</li><li data-t="r3">Ciampino → Fiumicino</li><li data-t="r4">Ciampino → altre località del Lazio</li><li data-t="r5">Itinerari personalizzati su richiesta</li>
+</ul><a class="btn gold" href="preventivo.html" data-t="quote2">Richiedi preventivo</a></div>
+</div></section>
 
-<section class="section">
-<div class="shell">
-<div class="section-head"><div class="kicker">DOMANDE FREQUENTI</div><h2>NCC Ciampino: informazioni utili</h2></div>
+<section class="section"><div class="shell">
+<div class="section-head"><div class="kicker" data-t="faqK">DOMANDE FREQUENTI</div><h2 data-t="faqT">NCC Ciampino: informazioni utili</h2></div>
 <div class="faq-grid">
-<div class="faq"><h3>Quanto costa un NCC da Ciampino a Roma?</h3><p>Il prezzo varia in base a destinazione, orario, passeggeri e necessità del servizio. Richiedi il preventivo prima della conferma.</p></div>
-<div class="faq"><h3>Posso prenotare Ciampino ↔ Fiumicino?</h3><p>Sì. Puoi richiedere un transfer privato tra i due aeroporti romani, oltre ai collegamenti con Roma e altre destinazioni.</p></div>
-<div class="faq"><h3>Posso viaggiare con più passeggeri?</h3><p>Sì. Specifica numero di passeggeri e bagagli nella richiesta, così da valutare il mezzo più adatto.</p></div>
-</div>
-</div>
-</section>
+<div class="faq"><h3 data-t="faq1q">Quanto costa un NCC da Ciampino a Roma?</h3><p data-t="faq1a">Il prezzo varia in base a destinazione, orario, passeggeri e necessità del servizio. Richiedi il preventivo prima della conferma.</p></div>
+<div class="faq"><h3 data-t="faq2q">Posso prenotare Ciampino ↔ Fiumicino?</h3><p data-t="faq2a">Sì. Puoi richiedere un transfer privato tra i due aeroporti romani, oltre ai collegamenti con Roma e altre destinazioni.</p></div>
+<div class="faq"><h3 data-t="faq3q">Posso viaggiare con più passeggeri?</h3><p data-t="faq3a">Sì. Specifica numero di passeggeri e bagagli nella richiesta, così da valutare il mezzo più adatto.</p></div>
+</div></div></section>
 
-<section class="cta">
-<div class="shell">
-<h2>Serve un NCC da o per Ciampino?</h2>
-<p>Invia i dati del viaggio e richiedi un preventivo senza impegno.</p>
-<a class="btn gold" href="preventivo.html">Richiedi preventivo</a>
-</div>
-</section>
+<section class="cta"><div class="shell"><h2 data-t="ctaT">Serve un NCC conveniente da o per Ciampino?</h2><p data-t="ctaP">Invia i dati del viaggio e richiedi un preventivo chiaro con prezzi accessibili e tariffe competitive.</p><a class="btn gold" href="preventivo.html" data-t="ctaB">Richiedi preventivo</a></div></section>
 </main>
-
 <footer><div class="shell foot"><span>MAX NCC • Roma & Centro Italia</span><span>+39 393 528 4668 • rossimax1966@outlook.it</span></div></footer>
-</body>
-</html>
+<script>window.DEST_T={"it":{"back":"← Torna al sito","eyebrow":"AEROPORTO DI ROMA CIAMPINO","title":"NCC Ciampino","intro":"Transfer privati da e per Ciampino, Roma e Fiumicino con servizio su prenotazione, prezzi accessibili e tariffe competitive definite in base al viaggio.","quote":"Richiedi preventivo","call":"Chiama +39 393 528 4668","s1k":"TRANSFER AEROPORTUALI","s1t":"Ciampino ↔ Roma, Fiumicino e Lazio","s1p":"Il servizio NCC da Ciampino è organizzato su prenotazione e può essere richiesto per spostamenti verso Roma, l’altro aeroporto romano o destinazioni extraurbane.","c1t":"Ciampino ↔ Roma","c1p":"Collegamento privato tra aeroporto e hotel, abitazioni, stazioni, uffici o punti concordati nella città di Roma.","c2t":"Ciampino ↔ Fiumicino","c2p":"Transfer tra i due aeroporti di Roma, utile quando il viaggio prevede arrivo e partenza da scali differenti.","c3t":"Ciampino ↔ Centro Italia","c3p":"Proseguimenti su richiesta verso altre località del Lazio e del Centro Italia, con percorso concordato in anticipo.","s2k":"PREZZI ACCESSIBILI","s2t":"Un NCC conveniente senza rinunciare alla professionalità","s2p":"Chi cerca un NCC economico da Ciampino vuole soprattutto un costo comprensibile e un servizio organizzato. MAX NCC prepara il preventivo sulla tratta richiesta, con informazioni chiare prima della conferma.","f1t":"Tariffa definita sul viaggio","f1p":"Il preventivo tiene conto di percorso, orario, passeggeri, bagagli ed eventuali esigenze specifiche.","f2t":"Partenza e arrivo concordati","f2p":"Indichi dove vuoi essere prelevato e dove devi arrivare; il servizio viene organizzato sulla richiesta.","f3t":"Soluzioni per passeggeri e bagagli","f3p":"Comunica il numero di persone e il bagaglio previsto per valutare la soluzione più adatta.","f4t":"Preventivo semplice","f4p":"Puoi richiedere il prezzo tramite il modulo del sito e decidere se confermare dopo aver ricevuto le informazioni.","s3k":"COLLEGAMENTI UTILI","s3t":"Da Ciampino verso la tua destinazione","s3p":"Roma resta la tratta principale, ma puoi richiedere anche trasferimenti verso Fiumicino e altre località.","linkRome":"NCC Roma","linkOther":"NCC Fiumicino","linkPort":"NCC Civitavecchia","linkServices":"Servizi NCC","routeBoxT":"Richiedi il transfer","r1":"Aeroporto Ciampino → Roma","r2":"Roma → Aeroporto Ciampino","r3":"Ciampino → Fiumicino","r4":"Ciampino → altre località del Lazio","r5":"Itinerari personalizzati su richiesta","quote2":"Richiedi preventivo","faqK":"DOMANDE FREQUENTI","faqT":"NCC Ciampino: informazioni utili","faq1q":"Quanto costa un NCC da Ciampino a Roma?","faq1a":"Il prezzo varia in base a destinazione, orario, passeggeri e necessità del servizio. Richiedi il preventivo prima della conferma.","faq2q":"Posso prenotare Ciampino ↔ Fiumicino?","faq2a":"Sì. Puoi richiedere un transfer privato tra i due aeroporti romani, oltre ai collegamenti con Roma e altre destinazioni.","faq3q":"Posso viaggiare con più passeggeri?","faq3a":"Sì. Specifica numero di passeggeri e bagagli nella richiesta, così da valutare il mezzo più adatto.","ctaT":"Serve un NCC conveniente da o per Ciampino?","ctaP":"Invia i dati del viaggio e richiedi un preventivo chiaro con prezzi accessibili e tariffe competitive.","ctaB":"Richiedi preventivo"},"en":{"back":"← Back to website","eyebrow":"ROME CIAMPINO AIRPORT","title":"Ciampino NCC","intro":"Private transfers to and from Ciampino, Rome and Fiumicino with pre-booked service, affordable prices and competitive rates based on the journey.","quote":"Request a quote","call":"Call +39 393 528 4668","s1k":"AIRPORT TRANSFERS","s1t":"Ciampino ↔ Rome, Fiumicino and Lazio","s1p":"The Ciampino NCC service is organised by reservation and can be requested for journeys to Rome, Fiumicino Airport or longer-distance destinations.","c1t":"Ciampino ↔ Rome","c1p":"Private connection between the airport and hotels, homes, stations, offices or agreed locations in Rome.","c2t":"Ciampino ↔ Fiumicino","c2p":"Transfer between Rome’s two airports, useful when a journey involves arrival and departure from different airports.","c3t":"Ciampino ↔ Central Italy","c3p":"On-request onward journeys to other destinations in Lazio and Central Italy, with the route agreed in advance.","s2k":"AFFORDABLE PRICES","s2t":"An affordable NCC without giving up professionalism","s2p":"Travellers looking for an affordable NCC from Ciampino usually want a clear price and an organised service. MAX NCC prepares a quote for the requested route with clear information before confirmation.","f1t":"Rate based on your journey","f1p":"The quote considers route, time, passengers, luggage and any specific requirements.","f2t":"Agreed pickup and arrival","f2p":"You specify where you want to be picked up and where you need to go; the service is organised around your request.","f3t":"Solutions for passengers and luggage","f3p":"Provide the passenger number and expected luggage so the most suitable solution can be evaluated.","f4t":"Simple quote","f4p":"Request the price through the website form and decide whether to confirm after receiving the information.","s3k":"USEFUL CONNECTIONS","s3t":"From Ciampino to your destination","s3p":"Rome is the main route, but you can also request transfers to Fiumicino and other destinations.","linkRome":"Rome NCC","linkOther":"Fiumicino NCC","linkPort":"Civitavecchia NCC","linkServices":"NCC services","routeBoxT":"Request your transfer","r1":"Ciampino Airport → Rome","r2":"Rome → Ciampino Airport","r3":"Ciampino → Fiumicino","r4":"Ciampino → other Lazio destinations","r5":"Custom itineraries on request","quote2":"Request a quote","faqK":"FREQUENTLY ASKED QUESTIONS","faqT":"Ciampino NCC: useful information","faq1q":"How much is an NCC from Ciampino to Rome?","faq1a":"The price varies according to destination, time, passengers and service needs. Request a quote before confirmation.","faq2q":"Can I book Ciampino ↔ Fiumicino?","faq2a":"Yes. You can request a private transfer between Rome’s two airports, as well as connections to Rome and other destinations.","faq3q":"Can I travel with more passengers?","faq3a":"Yes. Specify the passenger number and luggage in your request so the most suitable vehicle can be considered.","ctaT":"Need an affordable NCC to or from Ciampino?","ctaP":"Send your journey details and request a clear quote with affordable prices and competitive rates.","ctaB":"Request a quote"},"fr":{"back":"← Retour au site","eyebrow":"AÉROPORT DE ROME CIAMPINO","title":"NCC Ciampino","intro":"Transferts privés depuis et vers Ciampino, Rome et Fiumicino, sur réservation, avec prix accessibles et tarifs compétitifs adaptés au trajet.","quote":"Demander un devis","call":"Appeler +39 393 528 4668","s1k":"TRANSFERTS AÉROPORT","s1t":"Ciampino ↔ Rome, Fiumicino et Latium","s1p":"Le service NCC depuis Ciampino est organisé sur réservation pour les trajets vers Rome, l’aéroport de Fiumicino ou des destinations plus éloignées.","c1t":"Ciampino ↔ Rome","c1p":"Liaison privée entre l’aéroport et hôtels, domiciles, gares, bureaux ou points convenus à Rome.","c2t":"Ciampino ↔ Fiumicino","c2p":"Transfert entre les deux aéroports de Rome, utile lorsque le voyage prévoit arrivée et départ depuis des aéroports différents.","c3t":"Ciampino ↔ Italie centrale","c3p":"Poursuite sur demande vers d’autres destinations du Latium et d’Italie centrale, avec trajet défini à l’avance.","s2k":"PRIX ACCESSIBLES","s2t":"Un NCC abordable sans renoncer au professionnalisme","s2p":"Les voyageurs qui recherchent un NCC abordable depuis Ciampino souhaitent surtout un prix clair et un service organisé. MAX NCC prépare un devis pour le trajet demandé avant confirmation.","f1t":"Tarif défini selon le trajet","f1p":"Le devis tient compte du parcours, de l’horaire, des passagers, des bagages et des besoins spécifiques.","f2t":"Départ et arrivée convenus","f2p":"Vous indiquez le lieu de prise en charge et la destination ; le service est organisé selon votre demande.","f3t":"Solutions pour passagers et bagages","f3p":"Indiquez le nombre de personnes et les bagages prévus afin d’évaluer la solution la plus adaptée.","f4t":"Devis simple","f4p":"Demandez le prix via le formulaire du site et décidez de confirmer après réception des informations.","s3k":"LIAISONS UTILES","s3t":"De Ciampino vers votre destination","s3p":"Rome est la liaison principale, mais vous pouvez également demander des transferts vers Fiumicino et d’autres destinations.","linkRome":"NCC Rome","linkOther":"NCC Fiumicino","linkPort":"NCC Civitavecchia","linkServices":"Services NCC","routeBoxT":"Demandez votre transfert","r1":"Aéroport Ciampino → Rome","r2":"Rome → Aéroport Ciampino","r3":"Ciampino → Fiumicino","r4":"Ciampino → autres destinations du Latium","r5":"Itinéraires personnalisés sur demande","quote2":"Demander un devis","faqK":"QUESTIONS FRÉQUENTES","faqT":"NCC Ciampino : informations utiles","faq1q":"Combien coûte un NCC de Ciampino à Rome ?","faq1a":"Le prix varie selon la destination, l’horaire, les passagers et les besoins du service. Demandez un devis avant confirmation.","faq2q":"Puis-je réserver Ciampino ↔ Fiumicino ?","faq2a":"Oui. Vous pouvez demander un transfert privé entre les deux aéroports romains, ainsi que des liaisons vers Rome et d’autres destinations.","faq3q":"Puis-je voyager avec plusieurs passagers ?","faq3a":"Oui. Indiquez le nombre de passagers et les bagages pour évaluer le véhicule le plus adapté.","ctaT":"Besoin d’un NCC abordable depuis ou vers Ciampino ?","ctaP":"Envoyez les détails du voyage et demandez un devis clair avec des prix accessibles et des tarifs compétitifs.","ctaB":"Demander un devis"},"de":{"back":"← Zurück zur Website","eyebrow":"FLUGHAFEN ROM CIAMPINO","title":"NCC Ciampino","intro":"Private Transfers von und nach Ciampino, Rom und Fiumicino mit Vorbestellung, erschwinglichen Preisen und fairen Tarifen passend zur Fahrt.","quote":"Angebot anfragen","call":"Anrufen +39 393 528 4668","s1k":"FLUGHAFENTRANSFERS","s1t":"Ciampino ↔ Rom, Fiumicino und Latium","s1p":"Der NCC-Service ab Ciampino wird vorab gebucht und kann für Fahrten nach Rom, zum Flughafen Fiumicino oder zu weiter entfernten Zielen angefragt werden.","c1t":"Ciampino ↔ Rom","c1p":"Private Verbindung zwischen Flughafen und Hotels, Wohnungen, Bahnhöfen, Büros oder vereinbarten Orten in Rom.","c2t":"Ciampino ↔ Fiumicino","c2p":"Transfer zwischen den beiden Flughäfen Roms, sinnvoll wenn Ankunft und Abflug an unterschiedlichen Flughäfen stattfinden.","c3t":"Ciampino ↔ Mittelitalien","c3p":"Weiterfahrten auf Anfrage zu anderen Zielen in Latium und Mittelitalien mit vorab vereinbarter Strecke.","s2k":"ERSCHWINGLICHE PREISE","s2t":"Günstiger NCC-Service ohne Verzicht auf Professionalität","s2p":"Wer einen günstigen NCC-Service ab Ciampino sucht, möchte vor allem einen verständlichen Preis und einen organisierten Service. MAX NCC erstellt vor der Bestätigung ein transparentes Angebot für die gewünschte Strecke.","f1t":"Preis passend zur Fahrt","f1p":"Das Angebot berücksichtigt Strecke, Uhrzeit, Personenzahl, Gepäck und besondere Anforderungen.","f2t":"Vereinbarte Abholung und Ankunft","f2p":"Sie nennen Abholort und Ziel; der Service wird passend zu Ihrer Anfrage organisiert.","f3t":"Lösungen für Personen und Gepäck","f3p":"Geben Sie Personenzahl und Gepäck an, damit die passende Lösung gewählt werden kann.","f4t":"Einfaches Angebot","f4p":"Fordern Sie den Preis über das Formular an und entscheiden Sie nach Erhalt der Informationen über die Bestätigung.","s3k":"NÜTZLICHE VERBINDUNGEN","s3t":"Von Ciampino zu Ihrem Ziel","s3p":"Rom ist die wichtigste Strecke, Sie können aber auch Transfers nach Fiumicino und zu anderen Zielen anfragen.","linkRome":"NCC Rom","linkOther":"NCC Fiumicino","linkPort":"NCC Civitavecchia","linkServices":"NCC Services","routeBoxT":"Transfer anfragen","r1":"Flughafen Ciampino → Rom","r2":"Rom → Flughafen Ciampino","r3":"Ciampino → Fiumicino","r4":"Ciampino → weitere Ziele in Latium","r5":"Individuelle Fahrten auf Anfrage","quote2":"Angebot anfragen","faqK":"HÄUFIGE FRAGEN","faqT":"NCC Ciampino: nützliche Informationen","faq1q":"Was kostet ein NCC von Ciampino nach Rom?","faq1a":"Der Preis hängt von Ziel, Uhrzeit, Personenzahl und Serviceanforderungen ab. Fordern Sie vor der Bestätigung ein Angebot an.","faq2q":"Kann ich Ciampino ↔ Fiumicino buchen?","faq2a":"Ja. Sie können einen privaten Transfer zwischen den beiden römischen Flughäfen sowie Verbindungen nach Rom und zu anderen Zielen anfragen.","faq3q":"Kann ich mit mehreren Personen reisen?","faq3a":"Ja. Geben Sie Personenzahl und Gepäck bei der Anfrage an, damit das passende Fahrzeug berücksichtigt werden kann.","ctaT":"Brauchen Sie einen günstigen NCC-Service von oder nach Ciampino?","ctaP":"Senden Sie Ihre Reisedaten und fordern Sie ein transparentes Angebot mit erschwinglichen, wettbewerbsfähigen Preisen an.","ctaB":"Angebot anfragen"},"es":{"back":"← Volver al sitio","eyebrow":"AEROPUERTO DE ROMA CIAMPINO","title":"NCC Ciampino","intro":"Traslados privados desde y hacia Ciampino, Roma y Fiumicino con reserva, precios accesibles y tarifas competitivas según el viaje.","quote":"Solicitar presupuesto","call":"Llamar +39 393 528 4668","s1k":"TRASLADOS AEROPUERTO","s1t":"Ciampino ↔ Roma, Fiumicino y Lacio","s1p":"El servicio NCC desde Ciampino se organiza con reserva para trayectos hacia Roma, el aeropuerto de Fiumicino o destinos más lejanos.","c1t":"Ciampino ↔ Roma","c1p":"Conexión privada entre aeropuerto y hoteles, domicilios, estaciones, oficinas o puntos acordados en Roma.","c2t":"Ciampino ↔ Fiumicino","c2p":"Traslado entre los dos aeropuertos de Roma, útil cuando el viaje implica llegada y salida desde aeropuertos diferentes.","c3t":"Ciampino ↔ Centro de Italia","c3p":"Continuación bajo petición hacia otros destinos del Lacio y Centro de Italia con recorrido acordado previamente.","s2k":"PRECIOS ACCESIBLES","s2t":"Un NCC económico sin renunciar a la profesionalidad","s2p":"Quien busca un NCC económico desde Ciampino quiere sobre todo un precio claro y un servicio organizado. MAX NCC prepara un presupuesto para la ruta solicitada antes de confirmar.","f1t":"Tarifa definida según el viaje","f1p":"El presupuesto tiene en cuenta recorrido, horario, pasajeros, equipaje y necesidades específicas.","f2t":"Recogida y llegada acordadas","f2p":"Indicas dónde quieres ser recogido y dónde necesitas llegar; el servicio se organiza según tu solicitud.","f3t":"Soluciones para pasajeros y equipaje","f3p":"Indica el número de personas y el equipaje previsto para evaluar la solución más adecuada.","f4t":"Presupuesto sencillo","f4p":"Solicita el precio mediante el formulario del sitio y decide si confirmar después de recibir la información.","s3k":"CONEXIONES ÚTILES","s3t":"Desde Ciampino hacia tu destino","s3p":"Roma es la ruta principal, pero también puedes solicitar traslados a Fiumicino y otros destinos.","linkRome":"NCC Roma","linkOther":"NCC Fiumicino","linkPort":"NCC Civitavecchia","linkServices":"Servicios NCC","routeBoxT":"Solicita el traslado","r1":"Aeropuerto Ciampino → Roma","r2":"Roma → Aeropuerto Ciampino","r3":"Ciampino → Fiumicino","r4":"Ciampino → otros destinos del Lacio","r5":"Itinerarios personalizados bajo petición","quote2":"Solicitar presupuesto","faqK":"PREGUNTAS FRECUENTES","faqT":"NCC Ciampino: información útil","faq1q":"¿Cuánto cuesta un NCC de Ciampino a Roma?","faq1a":"El precio varía según destino, horario, pasajeros y necesidades del servicio. Solicita un presupuesto antes de confirmar.","faq2q":"¿Puedo reservar Ciampino ↔ Fiumicino?","faq2a":"Sí. Puedes solicitar un traslado privado entre los dos aeropuertos romanos, además de conexiones con Roma y otros destinos.","faq3q":"¿Puedo viajar con más pasajeros?","faq3a":"Sí. Indica el número de pasajeros y el equipaje en la solicitud para valorar el vehículo más adecuado.","ctaT":"¿Necesitas un NCC económico desde o hacia Ciampino?","ctaP":"Envía los datos del viaje y solicita un presupuesto claro con precios accesibles y tarifas competitivas.","ctaB":"Solicitar presupuesto"}};</script>
+<script src="destination.js"></script>
+</body></html>
